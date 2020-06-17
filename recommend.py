@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from IPython.display import clear_output
 
 
 def get_new_user_matrix(item_df, user_df, rank=50):
@@ -56,7 +55,7 @@ def get_user_reviews_testing(items_df):
         print(movie["title"])
         rating = input(
             "How would you rate this movie? (0-5, OR type 'skip'): "
-            )
+        )
         # If user has not seen, can enter skip instead
         if rating == "skip":
             clear_output()
@@ -86,7 +85,7 @@ def get_recommendations(item_factors_df, new_user_df):
     item_factors_df["new_user_predictions"] = item_factors_df["features"]\
         .apply(
             lambda x: np.dot(x, user_matrix)
-            )
+    )
 
     top_five_comics = item_factors_df.loc[
         item_factors_df["item_id"].astype(str).str.endswith("22"),
