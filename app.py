@@ -30,7 +30,7 @@ def process_form():
     # Create dictionary of top ten comic titles and image
     top_recommendations = []
     for index, comic in user_recommendations.iterrows():
-        image_url = 'images/comics/' + str(comic['item_id']) + '.jpg'
+        image_url = 'static/images/comics/' + str(comic['item_id']) + '.jpg'
         amazon_url = "https://www.amazon.com/s?k=" + \
             comic['asin'] + "&ref=nb_sb_noss"
         comic_recommendation = [comic['title'], image_url, amazon_url]
