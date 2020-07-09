@@ -3,7 +3,7 @@ from recommend import get_recommendations
 
 from flask import Flask, request, render_template
 
-app = Flask(__name__, static_url_path="")
+app = Flask(__name__)
 
 item_factors_df = pd.read_json('static/als_item_factor_details.json')
 
@@ -37,3 +37,7 @@ def process_form():
         top_recommendations.append(comic_recommendation)
 
     return render_template('recommend.html', comic_titles=top_recommendations)
+
+
+if __name__ == '__main__':
+    app.run()
