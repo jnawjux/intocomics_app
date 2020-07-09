@@ -1,2 +1,2 @@
 ## IntoComics web app
-Creating Azure App Service version of app
+Creating Heroku app version of IntoComics project
